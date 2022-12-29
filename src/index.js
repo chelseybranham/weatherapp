@@ -38,67 +38,60 @@ function formatDate() {
   return newDate;
 }
 
-////temp convert////
-
-
 ////api///
 
 document.querySelector('#getWeather').addEventListener('click', getFetch)
 function getFetch (){
   const city=document.querySelector('input').value;
-  let url= `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=1a6432c5ca7b6f9b0bee45c98d54ea71`;
+  let url= `https://api.shecodes.io/weather/v1/current?query=${city}&key=t6306325f2a8c0563364baa3ffoc7c4c&units=metric`;
 
 fetch(url)  
 .then((res) => res.json())
   .then((data) =>{
   console.log(data)
-  document.querySelector('h1').innerText=data.name
-  document.querySelector('#temperature').innerText=Math.round(data.main.temp)
-  document.querySelector('#humidity').innerText+=data.main.humidity
-  document.querySelector('#description').innerText=data.weather[0].main
-
+  document.querySelector('h1').innerText=data.city
+  document.querySelector('#temperature').innerText+=Math.round(data.temperature.current)
+  document.querySelector('#humidity').innerText+=data.temperature.humidity
+  document.querySelector('#description').innerText=data.condition.description
+  document.querySelector('#iconCurrent').src=data.condition.icon_url
+ celsiusTemperature=Math.round(data.temperature.current)
 })
 }
 
 
-document.querySelector('#getWeather').addEventListener('click', getFetch)
+document.querySelector('#getWeather').addEventListener('submit', getFetch)
 function getLocationWeather(){
  
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=1a6432c5ca7b6f9b0bee45c98d54ea71&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}&units=metric`;
 
 fetch(url)  
 .then((res) => res.json())
   .then((data) =>{
   console.log(data)
-  document.querySelector('h1').innerText=data.name
-  document.querySelector('#temperature').innerText=Math.round(data.main.temp)
-  document.querySelector('#humidity').innerText+=data.main.humidity
-  document.querySelector('#description').innerText=data.weather[0].main
-
+  document.querySelector('h1').innerText=data.city
+  document.querySelector('#temperature').innerText+=Math.round(data.temperature.current)
+  document.querySelector('#humidity').innerText+=data.temperature.humidity
+  document.querySelector('#description').innerText=data.condition.description
+  document.querySelector('#iconCurrent').src=data.condition.icon_url
+  celsiusTemperature=Math.round(data.temperature.current)
 })
 }
 
-
-
-
-
-
-
-
 function searchLocation(position) {
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${
-    position.coords.latitude
-  }&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  let apiKey = "t6306325f2a8c0563364baa3ffoc7c4c";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}&units=metric`;
 
   fetch(apiUrl)  
   .then((res) => res.json())
     .then((data) =>{
     console.log(data)
-    document.querySelector('h1').innerText=data.name
-    document.querySelector('#temperature').innerText=Math.round(data.main.temp)
-    document.querySelector('#humidity').innerText+=data.main.humidity
-    document.querySelector('#description').innerText=data.weather[0].main
+    document.querySelector('h1').innerText=data.city
+    document.querySelector('#temperature').innerText+=Math.round(data.temperature.current)
+    document.querySelector('#humidity').innerText+=data.temperature.humidity
+    document.querySelector('#description').innerText=data.condition.description
+    document.querySelector('#iconCurrent').src=data.condition.icon_url
+    
+    celsiusTemperature=Math.round(data.temperature.current)
     })  
 }
 
@@ -109,3 +102,27 @@ function getCurrentLocation(event) {
 
 let currentLocationButton = document.querySelector("#getCurrentLocation");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+////temp convert////
+function displayFahrenheitTemperature (event) {
+  event.preventDefault()
+  let fahrenheitTemperature=celsiusTemperature*1.8+32;
+  let temperatureElement= document.querySelector('#temperature');
+  temperatureElement.innerHTML=Math.round(fahrenheitTemperature)
+celsiusLink.classList.remove('active')
+fahrenheitLink.classList.add('active')
+}
+let celsiusTemperature= null
+let fahrenheitLink=document.querySelector('#fahrenheitLink')
+fahrenheitLink.addEventListener('click', displayFahrenheitTemperature)
+
+let celsiusLink=document.querySelector('#celsiusLink')
+
+function displayCelsiusTemperature (event){
+  event.preventDefault()
+  let temperatureElement= document.querySelector('#temperature');
+  temperatureElement.innerHTML=Math.round(celsiusTemperature)
+  celsiusLink.classList.add('active')
+fahrenheitLink.classList.remove('active')
+}
+celsiusLink.addEventListener('click', displayCelsiusTemperature)
