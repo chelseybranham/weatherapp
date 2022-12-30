@@ -37,7 +37,7 @@
     padding: 5px;
 border: 1px solid #4f7097;
 font-family: 'montserrat';
-width: 28%;
+
   }
 
 .container {
@@ -46,6 +46,10 @@ width: 28%;
 #getWeather, #getCurrentLocation{
   border-radius: 7px;
   background: #4f7097
+}
+
+#getWeather{
+  width: 20%
 }
 img {
   display: flex;
@@ -70,7 +74,7 @@ p, span, div {
 
 }
 input {
-  width: 25%;
+  width: 50%;
 }
 .active {
   color: black;

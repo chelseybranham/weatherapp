@@ -50,8 +50,8 @@ fetch(url)
   .then((data) =>{
   console.log(data)
   document.querySelector('h1').innerText=data.city
-  document.querySelector('#temperature').innerText+=Math.round(data.temperature.current)
-  document.querySelector('#humidity').innerText+=data.temperature.humidity
+  document.querySelector('#temperature').innerText=Math.round(data.temperature.current)
+  document.querySelector('#humidity').innerText=data.temperature.humidity
   document.querySelector('#description').innerText=data.condition.description
   document.querySelector('#iconCurrent').src=data.condition.icon_url
  celsiusTemperature=Math.round(data.temperature.current)
@@ -69,8 +69,8 @@ fetch(url)
   .then((data) =>{
   console.log(data)
   document.querySelector('h1').innerText=data.city
-  document.querySelector('#temperature').innerText+=Math.round(data.temperature.current)
-  document.querySelector('#humidity').innerText+=data.temperature.humidity
+  document.querySelector('#temperature').innerText=Math.round(data.temperature.current)
+  document.querySelector('#humidity').innerText=data.temperature.humidity
   document.querySelector('#description').innerText=data.condition.description
   document.querySelector('#iconCurrent').src=data.condition.icon_url
   celsiusTemperature=Math.round(data.temperature.current)
@@ -86,8 +86,8 @@ function searchLocation(position) {
     .then((data) =>{
     console.log(data)
     document.querySelector('h1').innerText=data.city
-    document.querySelector('#temperature').innerText+=Math.round(data.temperature.current)
-    document.querySelector('#humidity').innerText+=data.temperature.humidity
+    document.querySelector('#temperature').innerText=Math.round(data.temperature.current)
+    document.querySelector('#humidity').innerText=data.temperature.humidity
     document.querySelector('#description').innerText=data.condition.description
     document.querySelector('#iconCurrent').src=data.condition.icon_url
     
