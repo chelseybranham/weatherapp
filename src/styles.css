@@ -1,8 +1,4 @@
-.sunny {
-    color: yellow;
-    font-size: 50px;
-    text-align: center;
-  }
+
   h1,
   h2 {
     text-align: center;
@@ -22,10 +18,7 @@
     margin-bottom: 50px;
   }
   
-  .partlyCloudy {
-    font-size: 100px;
-    text-align: center;
-  }
+
   .card-text {
     text-align: center;
   }
@@ -37,19 +30,26 @@
     padding: 5px;
 border: 1px solid #4f7097;
 font-family: 'montserrat';
-
+width: 30%;
   }
 
 .container {
   background-image:linear-gradient(to right,white, #c8d9eb );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 #getWeather, #getCurrentLocation{
   border-radius: 7px;
-  background: #4f7097
+  background: #4f7097;
+  width: 20%;
+  display: inline;
+  margin: 10px;
 }
-
-#getWeather{
-  width: 20%
+input {
+  width: 25%;
+height: 45px;
 }
 img {
   display: flex;
@@ -61,7 +61,7 @@ margin: 0 auto;
   justify-content: center;
   align-items: center;
 }
-#humidity, #iconCurrent, #description, #humidityPercent {
+#humidity, #iconCurrent, #description, #humidityPercent, #windSpeed {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,10 +73,32 @@ p, span, div {
 
 
 }
-input {
-  width: 50%;
-}
+
 .active {
   color: black;
   text-decoration: none;
+}
+#forecast {
+  display: flex;
+  flex-direction: row
+}
+.searchAndButtons 
+{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  width: 100%;
+  padding: 20px
+  ;
+  align-items: center;
+}
+#forecast {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding: 10px;
+  justify-content: space-between;
+}
+#getWeather{
+  width: 15%;
 }

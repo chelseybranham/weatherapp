@@ -24,12 +24,12 @@
   </head>
   <body>
     <div class="container">
-     
-        <input type="search" id="city" placeholder="Enter City Name" />
+     <div class="searchAndButtons">
+        <input type="search" id="city" placeholder="Enter City Name"/>
         
         <button type="submit" name="button" id="getWeather">Search</button>
         <button type="button" name="getCurrentLocation" id="getCurrentLocation">Use Current Location</button>
-
+</div>
       <h1>Mesa,AZ</h1>
       <h2>Date Time</h2>
       <section class="currentWeather">
@@ -44,50 +44,48 @@
             </p> </span>
             <span id="description"></span>
           </br>
-           <span id='humidityPercent'> <span id="humidity">Humidity: </span>%</span>
+           <span id='humidityPercent'> <span id="humidity">Humidity: </span> %</span>
           </br>
+          <br>           <span id='windSpeed'> <span id="windSpeed">Wind Speed: </span> </span>
+
           </div>
         </div>
       </div>
     </section>
       <div class="row">
-        <div class="card col" style="width: 18rem;">
-          <i class="fa-solid fa-sun sunny"></i>
+        <div class="card col" id="forecast" style="">
+        
+        <!-- <div class="card col" id="forecast" style="width: 18rem;">
+          <i ></i>
           <div class="card-body">
-            <p class="card-text">70&#176;</p>
+            <p class="card-text">&#176;</p>
           </div>
         </div>
-        <div class="card col" style="width: 18rem;">
-          <i class="fa-solid fa-sun sunny"></i>
+        <div class="card col"  id="forecast"style="width: 18rem;">
+          <i ></i>
           <div class="card-body">
-            <p class="card-text">71&#176;</p>
+            <p class="card-text">&#176;</p>
           </div>
         </div>
-        <div class="card col" style="width: 18rem;">
-          <i class="fa-solid fa-sun sunny"></i>
+        <div class="card col" id="forecast" style="width: 18rem;">
+          <i ></i>
           <div class="card-body">
-            <p class="card-text">72&#176;</p>
+            <p class="card-text">&#176;</p>
           </div>
         </div>
-        <div class="card col" style="width: 18rem;">
-          <i class="fa-solid fa-sun sunny"></i>
+        <div class="card col"  id="forecast"style="width: 18rem;">
+          <i ></i>
           <div class="card-body">
-            <p class="card-text">72&#176;</p>
+            <p class="card-text">&#176;</p>
           </div>
         </div>
-        <div class="card col" style="width: 18rem;">
-          <i class="fa-solid fa-sun sunny"></i>
+        <div class="card col" id="forecast" style="width: 18rem;">
+          <i ></i>
           <div class="card-body">
-            <p class="card-text">72&#176;</p>
-          </div>
+            <p class="card-text">&#176;</p>
+          </div> -->
         </div>
-        <div class="card col" style="width: 18rem;">
-          <i class="fa-solid fa-sun sunny"></i>
-          <div class="card-body">
-            <p class="card-text">72&#176;</p>
-          </div>
-        </div>
-      </div>
+      </div> 
     </div>
     <script src="src/index.js"></script>
     <footer><span>
