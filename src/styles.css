@@ -78,10 +78,8 @@ p, span, div {
   color: black;
   text-decoration: none;
 }
-#forecast {
-  display: flex;
-  flex-direction: row
-}
+
+
 .searchAndButtons 
 {
   display: flex;
@@ -101,4 +99,32 @@ p, span, div {
 }
 #getWeather{
   width: 15%;
+}
+@media screen and (max-width: 400px){
+  .searchAndButtons {
+    display: flex;
+    flex-direction: column;
+   flex-grow: 1;
+   align-items: center;
+   width: 100%;
+  }
+
+  #getWeather, #getCurrentLocation{
+   width:75%
+  }
+  input {
+    width: 75%;
+  height: 45px;
+}
+#forecast {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.col-2{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+}
 }
