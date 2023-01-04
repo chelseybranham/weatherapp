@@ -71,7 +71,7 @@ fetch(url)
 
   document.querySelector('#iconCurrent').src=data.condition.icon_url
  celsiusTemperature=Math.round(data.temperature.current)
- 
+ getForecast(data.coordinates)
 })
 }
 
