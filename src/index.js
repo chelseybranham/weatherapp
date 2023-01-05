@@ -63,7 +63,7 @@ fetch(url)
 .then((res) => res.json())
   .then((data) =>{
   console.log(data)
-  document.querySelector('h1').innerText=data.city
+  document.querySelector('h1').innerText=data.city;
   document.querySelector('#temperature').innerText=Math.round(data.temperature.current)
   document.querySelector('#humidity').innerText+=data.temperature.humidity
   document.querySelector('#description').innerText=data.condition.description
