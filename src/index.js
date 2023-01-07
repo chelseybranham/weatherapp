@@ -170,7 +170,7 @@ forecastElement.innerHTML='Forecast"'
         />
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temperature-min"> ${Math.round(forecastday.temperature.minimum)}° </span>
-          <span class="weather-forecast-temperature-max"> ${Math.round(forecastday.temperature.maximum)}° </span>
+          <span class="weather-forecast-temperature-max"> ${Math.round(forecastday.temperature.maximum)}° c</span>
 
         </div>
       </div></div>
