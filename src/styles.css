@@ -8,6 +8,7 @@
   color:#4f7097
   }
   
+
   
   .currentCity {
     display: flex;
@@ -36,6 +37,7 @@ width: 30%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 #getWeather, #getCurrentLocation{
   border-radius: 7px;
@@ -92,12 +94,13 @@ p, span, div {
   flex-direction: row;
   text-align: center;
   padding: 10px;
+  margin-bottom: 50px;
   justify-content: space-between;
 }
 #getWeather{
   width: 15%;
 }
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
   .searchAndButtons {
     display: flex;
     flex-direction: column;
@@ -124,4 +127,8 @@ p, span, div {
   width: 50%;
   align-items: center;
 }
+
+#footer {
+  font-size: 10px;
+  text-align: left;
 }
